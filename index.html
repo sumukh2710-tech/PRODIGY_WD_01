@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smokit – Smarter Food Delivery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#fff;
+color:#111;
+}
+
+/* NAVBAR */
+header{
+position:fixed;
+width:100%;
+top:0;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:white;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo{
+font-size:26px;
+font-weight:800;
+color:#ff5722;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.download-btn{
+background:#ff5722;
+color:white;
+padding:10px 20px;
+border-radius:25px;
+text-decoration:none;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 8%;
+background:linear-gradient(135deg,#ff6a3d,#ff3d00);
+color:white;
+}
+
+.hero-left{
+max-width:550px;
+}
+
+.hero h1{
+font-size:56px;
+line-height:1.1;
+}
+
+.hero p{
+margin:20px 0 30px;
+font-size:18px;
+}
+
+.store-buttons button{
+height:50px;
+padding:0 20px;
+margin-right:10px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+}
+
+.apple{
+background:black;
+color:white;
+}
+
+.play{
+background:white;
+color:black;
+}
+
+.hero img{
+width:380px;
+border-radius:20px;
+}
+
+/* TRUST */
+.trust{
+padding:80px 8%;
+display:flex;
+justify-content:space-around;
+text-align:center;
+}
+
+.trust h2{
+font-size:36px;
+color:#ff5722;
+}
+
+/* ABOUT */
+.about{
+padding:100px 8%;
+display:flex;
+gap:50px;
+align-items:center;
+}
+
+.about-text{
+flex:1;
+}
+
+.about-text h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.about-text p{
+font-size:18px;
+line-height:1.6;
+color:#555;
+}
+
+.about img{
+flex:1;
+width:100%;
+border-radius:20px;
+}
+
+/* REVIEWS */
+.reviews{
+padding:100px 8%;
+background:#f9f9f9;
+text-align:center;
+}
+
+.reviews h2{
+font-size:40px;
+margin-bottom:40px;
+}
+
+.review-slider{
+max-width:700px;
+margin:auto;
+position:relative;
+}
+
+.review-card{
+display:none;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.review-card.active{
+display:block;
+}
+
+.review-card p{
+font-size:18px;
+margin-bottom:15px;
+}
+
+.review-card h4{
+color:#ff5722;
+}
+
+/* CTA */
+.cta{
+padding:120px 8%;
+background:#111;
+color:white;
+text-align:center;
+}
+
+.cta h2{
+font-size:42px;
+margin-bottom:30px;
+}
+
+.cta button{
+background:#ff5722;
+padding:15px 35px;
+border:none;
+border-radius:30px;
+color:white;
+font-weight:600;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+padding:40px 8%;
+text-align:center;
+background:#f2f2f2;
+color:#777;
+}
+
+@media(max-width:900px){
+.hero{
+flex-direction:column;
+text-align:center;
+padding-top:100px;
+}
+.about{
+flex-direction:column;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Smokit</div>
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#reviews">Reviews</a>
+<a href="#" class="download-btn" onclick="downloadApp()">Download</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-left">
+<h1>Hungry? Get It Delivered Faster.</h1>
+<p>India’s next-gen AI powered food delivery platform.</p>
+
+<div class="store-buttons">
+<button class="apple" onclick="downloadApp()">Download on App Store</button>
+<button class="play" onclick="downloadApp()">Get it on Play Store</button>
+</div>
+</div>
+
+<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=500&q=80">
+</section>
+
+<section class="trust">
+<div>
+<h2 id="orders">0</h2>
+<p>Orders Delivered</p>
+</div>
+<div>
+<h2>50+</h2>
+<p>Cities</p>
+</div>
+<div>
+<h2>4.8★</h2>
+<p>App Rating</p>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="about-text">
+<h2>About Smokit</h2>
+<p>
+Smokit is built for speed, intelligence and experience. Our AI understands your taste preferences and ensures lightning fast delivery with smart routing systems. We’re redefining how India orders food.
+</p>
+</div>
+
+<img src="https://images.unsplash.com/photo-1529692236671-f1dcdd4a5b65?auto=format&fit=crop&w=600&q=80">
+</section>
+
+<section class="reviews" id="reviews">
+<h2>What Our Customers Say</h2>
+
+<div class="review-slider">
+<div class="review-card active">
+<p>"Smokit delivers faster than any other app. The UI is super smooth!"</p>
+<h4>— Rahul M.</h4>
+</div>
+
+<div class="review-card">
+<p>"AI recommendations are surprisingly accurate. Love the experience."</p>
+<h4>— Priya S.</h4>
+</div>
+
+<div class="review-card">
+<p>"Better than Swiggy in my area. Delivery is always on time."</p>
+<h4>— Arjun K.</h4>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<h2>Ready to Order Smarter?</h2>
+<button onclick="downloadApp()">Download Smokit Now</button>
+</section>
+
+<footer>
+© 2026 Smokit Technologies Pvt Ltd | Built in India 🇮🇳
+</footer>
+
+<script>
+
+/* Fake Download Action */
+function downloadApp(){
+alert("Redirecting to App Store / Play Store (Demo)");
+}
+
+/* Animated Counter */
+let count=0;
+let interval=setInterval(()=>{
+if(count>=5000000){
+clearInterval(interval);
+}
+else{
+count+=50000;
+document.getElementById("orders").innerText=count.toLocaleString()+"+";
+}
+},20);
+
+/* Review Slider */
+let index=0;
+const reviews=document.querySelectorAll(".review-card");
+
+setInterval(()=>{
+reviews[index].classList.remove("active");
+index=(index+1)%reviews.length;
+reviews[index].classList.add("active");
+},4000);
+
+</script>
+
+</body>
+</html>
